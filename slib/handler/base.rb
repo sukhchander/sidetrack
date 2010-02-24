@@ -1,12 +1,7 @@
-require 'rubygems'
-require 'rack/request'
-require 'rack/response'
-require 'handler/error'
-
 module Handler
-
-	class Base
-
+  
+	module Base
+	  
 		def Base.logger
 			@@logger
 		end
@@ -21,7 +16,7 @@ module Handler
 
 		def call(env)
 			req = Rack::Request.new(env)
-			resp = Rack::Response.new()
+			resp = Rack::Response.new
 			begin
 				if req.head?
 					validate_required_head_args(req)
@@ -47,14 +42,11 @@ module Handler
 				if accept_header.eql?("application/json")
 					resp.body = { :type => "Exception", :message => httpe.message }.to_json + "\n"
 				elsif accept_header.eql?("text/html")
-					resp.body = "<H1>#{httpe.error_message}</H1>\n" +
+					resp.body = "<h1>#{httpe.error_message}</h1>\n" +
 						httpe.message + "\n"
 				else
 					resp.body = "#{httpe.message}\n"
 				end
-			#rescue
-				#resp.status = 500
-				#resp.body = "<H1>Unknown error</H1>\n"
 			end
 			finish(req, resp)
 		end
@@ -170,27 +162,23 @@ module Handler
 		end
 
 		def path?(req, path)
-			if req.path_info == path or req.path_info == path + "/"
-				return true
-			end
-			return false
+            path=false
+			path=true if req.path_info == path or req.path_info == path + "/"
+            path
 		end
 
 		def split_path(req)
 			path, ext = get_ext(req)
-			return path.split("/").select { |chunk| chunk unless chunk == "" }
+			path.split("/").select { |chunk| chunk unless chunk == "" }
 		end
 
-
-		def get_ext(req)
-			chunks = req.path_info.split(".")
+		def get_extension(req)
 			ext = nil
-			if chunks.size > 1
-				ext = chunks.pop
-			end
-			return chunks.join("."), ext
+			chunks = req.path_info.split(".")
+			ext = chunks.pop if chunks.size > 1
+			[chunks.join("."), ext]
 		end
-
+	
 	end
-
+	
 end

@@ -4,4 +4,9 @@ i got sidetracked while writing some other code. ended up spending time on this
 wrapper around rack to easily create webservices that can respond to
 GET/POST/PUT/DELETE/HEAD via JSON and/or XML REST calls.
 
-see a working example @ http://bit.ly/3Cn0Ev
+see a working example @ http://bit.ly/3Cn0Ev (inactive -- ec2 costs were
+prohibitive)
+
+to run:
+ln -sf development.ru config.ru
+./start.sh

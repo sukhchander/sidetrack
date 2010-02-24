@@ -5,19 +5,3 @@ development:
   username: root
   password: 
   socket: /opt/local/var/run/mysql5/mysqld.sock
-
-test:
-  adapter: mysql
-  encoding: utf8
-  database: test
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
-
-production:
-  adapter: mysql
-  encoding: utf8
-  database: prod
-  username: isaak
-  password:
-  socket: /var/run/mysqld/mysqld.sock

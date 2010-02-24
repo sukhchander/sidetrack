@@ -56,56 +56,56 @@ module Handler
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestBadRequest < Http
+		class RestBadRequest < Http 
 			@@error_code = 400
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestUnauthorized < Http
+		class RestUnauthorized < Http 
 			@@error_code = 401
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestForbidden < Http
+		class RestForbidden < Http 
 			@@error_code = 403
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestInternalServerError < Http
+		class RestInternalServerError < Http 
 			@@error_code = 500
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestMethodNotAllowed < Http
+		class RestMethodNotAllowed < Http 
 			@@error_code = 405
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestNotAcceptable < Http
+		class RestNotAcceptable < Http 
 			@@error_code = 406
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
-		class RestConflict < Http
+		class RestConflict < Http 
 			@@error_code = 409
 			def error_code
 				@@error_code
 			end
-		end
+		end 
 
 	end
 
