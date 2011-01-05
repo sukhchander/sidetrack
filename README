@@ -1,12 +1,24 @@
-created this framework for building webservices.
+sidetrack is a wrapper on top of rack 
 
-i got sidetracked while writing some other code. ended up spending time on this
-wrapper around rack to easily create webservices that can respond to
-GET/POST/PUT/DELETE/HEAD via JSON and/or XML REST calls.
+it's a framework for building webservices in ruby
 
-see a working example @ http://bit.ly/3Cn0Ev (inactive -- ec2 costs were
-prohibitive)
+i got sidetracked while writing another application. 
+i didn't want to to use rails to generate a webservice because it's overkill for that.
+if you like simple code this is for you. all you rails fanboys and fangirls can
+start your hatin' now. you're all sensitive thugs that just need hugs.
+
+sidetrack allows for easy now creation of webservices that respond support GET/POST/PUT/DELETE/HEAD
+
+see a working examples:
+
+http://bit.ly/iComments_Heroku
+
+http://bit.ly/iTranslate_Heroku
+
+http://bit.ly/3Cn0Ev (inactive -- ec2 costs were prohibitive -- now that heroku
+is here don't need to spin up an ec2 instance for demos like these)
 
 to run:
-ln -sf development.ru config.ru
-./start.sh
+ln -sf config/development.ru config.ru
+./run.sh
+point to http://localhost:12345
